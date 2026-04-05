@@ -24,13 +24,14 @@ import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.center
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.toOffset
+import com.example.circle.presentation.viewModels.CircleGameViewModel
 import com.example.gametime_app.domain.CircleItem
-import com.example.gametime_app.presentation.viewModel.CircleGameViewModel
 import kotlin.random.Random
 
 @Composable
 fun CircleCollectorGame(modifier: Modifier = Modifier,
-                        viewModel: CircleGameViewModel) {
+                        viewModel: CircleGameViewModel
+) {
     val mainColor = Color(0xFFFF4081) // Розовый цвет с фото
 
     Box(modifier = modifier.fillMaxSize()) {
@@ -38,7 +39,7 @@ fun CircleCollectorGame(modifier: Modifier = Modifier,
             modifier = Modifier
                 .fillMaxSize()
                 .onSizeChanged { size ->
-                    viewModel.onSizeChanged(size)
+                    viewModel.start(size)
                 }
                 .pointerInput(Unit) {
                     detectDragGestures(
@@ -50,7 +51,7 @@ fun CircleCollectorGame(modifier: Modifier = Modifier,
                             // Сохраняем только валидный индекс (не -1)
                             viewModel.draggedIndex = if (index != -1) index else null
                         },
-                        onDragEnd = { viewModel.draggedIndex = null },
+                        onDragEnd = { viewModel.handleDragStop() },
                         onDragCancel = { viewModel.draggedIndex = null },
                         onDrag = { change, dragAmount ->
                             change.consume() // Подтверждаем обработку жеста

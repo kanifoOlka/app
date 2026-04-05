@@ -7,8 +7,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
+import com.example.circle.presentation.viewModels.CircleGameViewModel
 import com.example.gametime_app.presentation.components.CircleCollectorGame
-import com.example.gametime_app.presentation.viewModel.CircleGameViewModel
 import com.example.gametime_uikit.ui.components.PrimaryButton
 import com.example.gametime_uikit.ui.components.SpacerHeight
 import com.example.gametime_uikit.ui.components.Timer
@@ -36,7 +36,7 @@ fun CircleGame(
             viewModel = viewModel
         )
         PrimaryButton(
-            onClick = {viewModel.initGame()},
+            onClick = {viewModel.restart()},
             text = "Surrender"
         )
         SpacerHeight(69)

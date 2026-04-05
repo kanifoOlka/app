@@ -13,6 +13,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.circle.presentation.viewModels.CircleGameViewModel
 import com.example.gametime_app.R
 import com.example.gametime_app.presentation.screens.CircleGame
 import com.example.gametime_app.presentation.screens.CombatInformation
@@ -28,7 +29,6 @@ import com.example.gametime_app.presentation.screens.ScheduleGame
 import com.example.gametime_app.presentation.screens.SpalshScreen
 import com.example.gametime_app.presentation.screens.Statistics
 import com.example.gametime_app.presentation.viewModel.AuthViewModel
-import com.example.gametime_app.presentation.viewModel.CircleGameViewModel
 import com.example.gametime_app.presentation.viewModel.CreateGameViewModel
 import com.example.gametime_app.presentation.viewModel.GetCategoryViewModel
 import com.example.gametime_app.presentation.viewModel.GetStatisticViewModel

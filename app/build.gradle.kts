@@ -53,6 +53,7 @@ dependencies {
     implementation(files("libs/app-release.aar"))
     implementation(files("libs/image-game-debug.aar"))
     implementation(files("libs/app-debug-network.aar"))
+    implementation(files("libs/circle-debug.aar"))
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
